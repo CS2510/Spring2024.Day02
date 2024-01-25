@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>An encyclopedia</title>
+    <style>
+        * {
+            margin: 0
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="canv">
+        <!-- pixels -->
+
+    </canvas>
+
+    <script>
+        let a = 0
+
+        function draw() {
+            let canvas = document.querySelector("#canv")
+            let ctx = canvas.getContext("2d")
+
+            ctx.fillStyle = "white"
+            ctx.beginPath()
+            ctx.rect(0,0,canvas.width,canvas.height)
+            ctx.fill()
+
+
+            ctx.beginPath();
+            ctx.fillStyle = "green"
+            ctx.strokeStyle = "purple"
+            ctx.lineWidth = 5
+            ctx.arc(50 + a, 50, 50, 0, Math.PI * 2)
+            ctx.fill()
+            ctx.stroke()
+
+            a++
+            //a+=1
+
+
+
+        }
+
+        setInterval(draw, 100)
+
+
+
+    </script>
+</body>
+
+</html>
